@@ -1,27 +1,74 @@
-# ListeUsagers
+# Application de Liste des usagers
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
+## Description du Projet
 
-## Development server
+Cette application Angular affiche une liste d'usagers obtenue à partir d'un appel API. Les usagers sont affichés dans un tableau trié avec des colonnes. L'application est conçue pour être responsive, ce qui signifie qu'elle s'adapte bien aux différentes tailles d'écran.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Fonctionnalités
 
-## Code scaffolding
+- Récupération des usagers depuis une API publique
+- Affichage des usagers dans un tableau avec colonnes triables
+- Navigation entre la page d'accueil et la page des usagers
+- Responsive design
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies Utilisées
 
-## Build
+- Angular 15
+- Angular Material
+- TypeScript
+- RxJS
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation et Démarrage
 
-## Running unit tests
+### Prérequis
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js (version 14 ou supérieure)
+- Angular CLI (version 15 ou supérieure)
 
-## Running end-to-end tests
+### Étapes
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. **Cloner le dépôt GitHub**
+   ```bash
+   git clone https://github.com/islimani/liste-usagers.git
+   cd liste-usagers
+   ```
+   
+2. **Installer les dépendances**
+   ```bash
+   npm install
+   ```
 
-## Further help
+3. **Démarrer l'application**
+   ```bash
+   npm serve
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. **Accéder à l'application**
+
+   Ouvrez votre navigateur et allez à l'adresse http://localhost:4200.
+
+## Structure du Projet
+
+### Composants
+
+- HomeComponent : Affiche votre nom et un bouton pour lancer la requête vers l'API des usagers
+- UsersComponent : Affiche le tableau des usagers avec des colonnes triables.
+
+### Services
+
+- UserService : Service pour interroger l'API et récupérer les usagers.
+
+### Modules
+
+- AppModule : Module principal de l'application, incluant les configurations de routage et les modules Angular Material.
+
+## Tests Unitaires
+
+Les tests unitaires sont inclus pour assurer le bon fonctionnement des différentes fonctionnalités de l'application. Les tests sont écrits à l'aide de Jasmine et de la librairie de test Angular.
+
+### Exécution des Tests
+
+Pour exécuter les tests unitaires, utilisez la commande suivante :
+  ```bash
+  ng test
+  ```

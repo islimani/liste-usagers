@@ -11,6 +11,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {HomeComponent} from './home/home.component';
 import {UsersComponent} from './users/users.component';
 
+/**
+ * AppModule est la racine du module de l'application Angular.
+ */
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,14 +21,14 @@ import {UsersComponent} from './users/users.component';
     UsersComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    MatButtonModule,
-    MatSortModule,
-    FlexLayoutModule
+    BrowserModule, // Module pour exécuter l'application dans un navigateur
+    AppRoutingModule, // Module de routage pour l'application
+    HttpClientModule, // Module pour les requêtes HTTP
+    BrowserAnimationsModule, // Module pour les animations Angular
+    MatTableModule, // Module pour les tables Angular Material
+    MatButtonModule, // Module pour les boutons Angular Material
+    MatSortModule, // Module pour le tri des tables Angular Material
+    FlexLayoutModule // Module pour le layout flexible
   ],
   providers: [],
   bootstrap: [AppComponent]

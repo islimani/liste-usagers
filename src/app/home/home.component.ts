@@ -28,7 +28,6 @@ export class HomeComponent {
     this.userService.getUsers().subscribe({
       next: () => {
         this.router.navigate(['/users']).then(() => {
-          console.log('Navigation vers /users terminée');
         }).catch(err => {
           console.error('Erreur lors de la navigation vers /users :', err);
         });
