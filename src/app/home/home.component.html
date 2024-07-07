@@ -1,5 +1,8 @@
 <div class="home-container">
   <h1>SLIMANI Ilyass</h1>
   <h2>Test Analyste-Programmeur (Angular)</h2>
-  <button mat-raised-button color="primary" (click)="goToUsers()">Consulter usagers</button>
+  <button mat-raised-button color="primary" (click)="goToUsers()" [disabled]="isLoading">
+    {{ isLoading ? 'Chargement...' : 'Consulter usagers' }}
+  </button>
+  <div *ngIf="isLoading" class="loader">Loading...</div>
 </div>

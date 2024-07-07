@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,15 @@ import {Router} from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
+  isLoading = false;
+
   /**
    * Constructeur du composant HomeComponent.
    * @param router Service de routage Angular pour la navigation entre les pages.
+   * @param userService
    */
-  constructor(private router: Router) {
+  constructor(private router: Router, private userService: UserService) {
   }
 
   /**
@@ -19,10 +24,22 @@ export class HomeComponent {
    * Redirige l'utilisateur vers la page des utilisateurs (/users).
    */
   goToUsers(): void {
-    this.router.navigate(['/users']).then(() => {
-      console.log('Navigation vers /users terminée');
-    }).catch(err => {
-      console.error('Erreur lors de la navigation vers /users :', err);
+    this.isLoading = true;
+    this.userService.getUsers().subscribe({
+      next: () => {
+        this.router.navigate(['/users']).then(() => {
+          console.log('Navigation vers /users terminée');
+        }).catch(err => {
+          console.error('Erreur lors de la navigation vers /users :', err);
+        });
+      },
+      complete: () => {
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.error('Erreur lors de la récupération des utilisateurs :', err);
+        this.isLoading = false;
+      }
     });
   }
 

@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
+  overflow-x: auto;
 }
 
 .back {
@@ -12,11 +13,18 @@
 
 .mat-elevation-z8 {
   width: 100%;
+  table-layout: fixed;
+  white-space: nowrap;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
   .mat-elevation-z8 {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
