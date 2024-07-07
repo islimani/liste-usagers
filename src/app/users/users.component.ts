@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
-import {Router} from '@angular/router';
 import {User, UserService} from '../user.service';
 
 @Component({
@@ -15,7 +14,7 @@ export class UsersComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort | undefined;
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -37,6 +36,6 @@ export class UsersComponent implements OnInit {
   }
 
   goBack(): void {
-    this.router.navigate(['/']);
+    this.userService.goHome();
   }
 }

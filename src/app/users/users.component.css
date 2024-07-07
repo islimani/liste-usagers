@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.back {
+  margin-bottom: 30px;
+}
+
+.mat-elevation-z8 {
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .mat-elevation-z8 {
+    font-size: 14px;
+  }
+}
