@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {Router} from '@angular/router';
+import {User, UserService} from '../user.service';
 
 @Component({
   selector: 'app-users',
@@ -11,11 +11,11 @@ import {Router} from '@angular/router';
 })
 export class UsersComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'email', 'gender', 'status'];
-  dataSource: MatTableDataSource<any> = new MatTableDataSource();
+  dataSource: MatTableDataSource<User> = new MatTableDataSource();
 
   @ViewChild(MatSort) sort: MatSort | undefined;
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private userService: UserService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -23,13 +23,17 @@ export class UsersComponent implements OnInit {
   }
 
   fetchUsers(): void {
-    this.http.get<any[]>('https://gorest.co.in/public/v2/users')
-      .subscribe(users => {
+    this.userService.getUsers().subscribe(
+      users => {
         this.dataSource.data = users;
         if (this.sort) {
           this.dataSource.sort = this.sort;
         }
-      });
+      },
+      error => {
+        console.error('Error fetching users:', error);
+      }
+    );
   }
 
   goBack(): void {
