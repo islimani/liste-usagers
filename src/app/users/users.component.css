@@ -17,14 +17,19 @@
   white-space: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
 }
 
-@media screen and (max-width: 600px) {
-  .container {
-    padding: 10px;
-  }
+.mat-elevation-z8 th,
+.mat-elevation-z8 td {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-  .mat-elevation-z8 {
-    font-size: 12px;
-  }
+.mat-elevation-z8 th.mat-header-cell,
+.mat-elevation-z8 td.mat-cell {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
 }

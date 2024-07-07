@@ -30,7 +30,7 @@ export class UsersComponent implements OnInit {
         }
       },
       error => {
-        console.error('Error fetching users:', error);
+        console.error('Erreur dans le fetchUsers:', error);
       }
     );
   }
