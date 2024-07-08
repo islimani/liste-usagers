@@ -40,7 +40,7 @@ Cette application Angular affiche une liste d'usagers obtenue à partir d'un app
 
 3. **Démarrer l'application**
    ```bash
-   npm serve
+   ng serve
    ```
 
 4. **Accéder à l'application**
@@ -72,3 +72,10 @@ Pour exécuter les tests unitaires, utilisez la commande suivante :
   ```bash
   ng test
   ```
+## Améliorations
+
+- Ajout de pagination sur le tableau des usagers
+- Ajout d'un hover lorsque le text n'est pas complétement lisible
+- Ajout du border resizing du tableau
+- Ajout authentification/autorisation pour la sécurité
+- ...
